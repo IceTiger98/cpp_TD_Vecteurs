@@ -1,4 +1,9 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
+
+
 class CVect2D {
 
 private:
@@ -12,8 +17,8 @@ protected:
 public:
 
 	//Constructeur
-	//CVect2D();
-	CVect2D(float fl_x = 1, float fl_y = 2);
+	CVect2D();
+	CVect2D(float fl_x, float fl_y);
 
 	//Constructeur de copie
 	CVect2D(CVect2D& v);
@@ -28,8 +33,8 @@ public:
 	float getY()const;
 
 	//Mutateurs set
-	void setX(float fl_x = 3);
-	void setY(float fl_y = 4);
+	void setX(float fl_x = 0);
+	void setY(float fl_y = 0);
 
 
 
@@ -38,15 +43,22 @@ public:
 
 
 
-	//Fonctions usuelles
-	void addition();
-	void soustraction();
-	void multiplication();
-	void division();
-
-
-
 	//Fonction affiche
 	void affiche()const;
+
+
+
+	//Surcharge opérateur
+	//Surcharge opérateur +
+	CVect2D operator +(CVect2D& v)const;
+
+	//Surcharge opérateur /
+	CVect2D operator /(CVect2D& v);
+
+	//Surcharge opérateur -
+	CVect2D operator -(CVect2D& v)const;
+
+	//Surcharge opérateur *
+	CVect2D operator *(CVect2D& v)const;
 
 };
